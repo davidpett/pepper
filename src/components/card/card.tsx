@@ -7,8 +7,10 @@ export interface ICard extends TouchableOpacityProps {
 }
 
 const Card: React.FC<ICard> = ({ title, onPress, ...rest }) => (
-  <TouchableOpacity activeOpacity={0.7} onPress={onPress} style={styles.container} {...rest}>
-    <Text style={styles.title}>{title}</Text>
+  <TouchableOpacity testID="cardContainer" activeOpacity={0.7} onPress={onPress} style={styles.container} {...rest}>
+    <Text testID="cardTitle" style={styles.title}>
+      {title}
+    </Text>
   </TouchableOpacity>
 )
 
